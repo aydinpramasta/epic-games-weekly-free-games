@@ -1,4 +1,4 @@
-name: "Send this week's free games from Epic Games to Telegram"
+name: 'Send this week free games from Epic Games to Telegram'
 
 on:
  schedule:
