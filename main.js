@@ -11,19 +11,11 @@ const currentWeekFreeGames = freeGames.filter((game) =>
   getCurrentWeekDatesStartingThursday().includes(game.freeDate)
 );
 
-console.log(
-  "Current week free games: " +
-    currentWeekFreeGames
-      .map((game) => `${game.gameTitle} - ${game.epicStoreLink}`)
-      .join("\n"),
-  currentWeekFreeGames,
-  getCurrentWeekDatesStartingThursday(),
-  freeGames
-);
+const message =
+  currentWeekFreeGames.length > 0
+    ? `Current week free games: ${currentWeekFreeGames
+        .map((game) => `${game.gameTitle} - ${game.epicStoreLink}`)
+        .join("\n")}`
+    : "No free games available for the current week.";
 
-await bot.telegram.sendMessage(
-  config.telegramChatId,
-  currentWeekFreeGames
-    .map((game) => `${game.gameTitle} - ${game.epicStoreLink}`)
-    .join("\n")
-);
+await bot.telegram.sendMessage(config.telegramChatId, message);
