@@ -13,7 +13,7 @@ const currentWeekFreeGames = freeGames.filter((game) =>
 
 const message =
   currentWeekFreeGames.length > 0
-    ? `Current week free games: ${currentWeekFreeGames
+    ? `Current week free games: \n\n ${currentWeekFreeGames
         .map((game) => `${game.gameTitle} - ${game.epicStoreLink}`)
         .join("\n")}`
     : "No free games available for the current week.";
