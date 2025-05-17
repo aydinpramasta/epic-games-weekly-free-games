@@ -2,6 +2,8 @@ import { getCurrentWeekDatesStartingThursday } from "./lib/helper.js";
 import bot from "./lib/telegraf.js";
 import config from "./lib/config.js";
 
+console.log(config);
+
 const response = await fetch(
   "https://raw.githubusercontent.com/josephmate/EpicFreeGamesList/refs/heads/main/epic_free_games.json"
 );
